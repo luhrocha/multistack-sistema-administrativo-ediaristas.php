@@ -53,22 +53,22 @@ class UsuarioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  User $usuario
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $usuario)
     {
     }
 
     /**
      * Busca o usuário e mostra uma formulário com seus dados para alteração
      *
-     * @param  int  $id
+     * @param  User $usuario
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function edit($id)
+    public function edit(User $usuario)
     {
-        $usuario = User::findOrFail($id);
+        //$usuario = User::findOrFail($id);
 
         return view('usuarios.edit')->with('usuario', $usuario);
     }
@@ -77,12 +77,12 @@ class UsuarioController extends Controller
      * Atualiza os dados de um usuário no banco de dados
      *
      * @param  App\Http\Requests\UsuarioRequest
-     * @param  int  $id
+     * @param  User $usuario
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function update(UsuarioRequest $request, $id)
+    public function update(UsuarioRequest $request, User $usuario)
     {
-        $usuario = User::findOrFail($id);
+        //$usuario = User::findOrFail($id);
 
         $usuario->update(
             [
@@ -98,12 +98,12 @@ class UsuarioController extends Controller
     /**
      * Remove um usuário do banco de dados
      *
-     * @param  int  $id
+     * @param  User $usuario
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(User $usuario)
     {
-        $usuario = User::findOrFail($id);
+        //$usuario = User::findOrFail($id);
         $usuario->delete();
 
         return redirect()->route('usuarios.index')->with('mensagem', 'Usuário removido com sucesso!');

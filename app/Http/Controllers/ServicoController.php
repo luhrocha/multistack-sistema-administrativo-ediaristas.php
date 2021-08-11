@@ -48,29 +48,26 @@ class ServicoController extends Controller
 
     /**
      * Redireciona para o formulário preenchido com as informações dos serviços cadastradas no banco de dados
-     *
-     * @param integer $id
+     * usando Route Model Bind
+     * @param Servico $servico
      * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
      */
-    public function edit(int $id)
+    public function edit(Servico $servico)
     {
-        $servico = Servico::findOrFail($id);
-
         return view('servicos.edit')->with('servico', $servico);
     }
 
     /**
      * Recebe os dados do formulário e atualiza os serviços do banco de dados
      * Redireciona para a listagem de serviços
-     *      
-     * @param integer $id
+     * Usa Route Model Bind     
+     * @param Servico $servico
      * @param ServicoRequest $request
      * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
-    public function update(int $id, ServicoRequest $request)
+    public function update(Servico $servico, ServicoRequest $request)
     {
         $dados = $request->except(['_token', '_method']);
-        $servico = Servico::findOrFail($id);
 
         $servico->update($dados);
 
