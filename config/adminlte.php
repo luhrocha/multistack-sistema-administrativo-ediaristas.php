@@ -280,6 +280,22 @@ return [
                 ],
             ],
         ],
+        [
+            'text'    => 'Usuários',
+            'icon'    => 'fas fa-user-alt',
+            'submenu' => [
+                [
+                    'icon' => 'fas fa-clipboard-list',
+                    'text' => 'Lista de Usuários',
+                    'route'  => 'usuarios.index',
+                ],
+                [
+                    'icon' => 'fas fa-plus-square',
+                    'text' => 'Cadastrar Usuário',
+                    'route'  => 'usuarios.create',
+                ],
+            ],
+        ],
         /* ['header' => 'labels'],
         [
             'text'       => 'important',

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ServicoController;
+use App\Http\Controllers\UsuarioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,3 +29,6 @@ Route::get('/servicos/create', [ServicoController::class, 'create'])->name('serv
 Route::get('/servicos/{servico}/edit', [ServicoController::class, 'edit'])->name('servicos.edit');
 Route::post('/servicos', [ServicoController::class, 'store'])->name('servicos.store');
 Route::put('/servicos/{servico}', [ServicoController::class, 'update'])->name('servicos.update');
+
+//Rotas do tipo resource
+Route::resource('usuarios', UsuarioController::class);
