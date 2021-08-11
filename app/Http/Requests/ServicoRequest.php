@@ -60,22 +60,22 @@ class ServicoRequest extends FormRequest
         return [
             "nome" => ['required', 'min:2', 'max:255'],
             'icone' => ['required', Rule::in(['twf-cleaning-1', 'twf-cleaning-2', 'twf-cleaning-3'])],
-            'posicao' => ['required', 'integer'],
+            'posicao' => ['required', 'integer', 'min:1', 'max:99'],
             'valor_minimo' => ['required', 'numeric'],
-            'quantidade_horas' => ['required', 'integer'],
-            'porcentagem_comissao' => ['required', 'numeric'],
+            'quantidade_horas' => ['required', 'integer', 'min:1', 'max:8'],
+            'porcentagem_comissao' => ['required', 'numeric', 'min:1', 'max:99'],
             'valor_quarto' => ['required', 'numeric'],
-            'horas_quarto' => ['required', 'integer'],
+            'horas_quarto' => ['required', 'integer', 'min:1', 'max:8'],
             'valor_sala' => ['required', 'numeric'],
-            'horas_sala' => ['required', 'integer'],
+            'horas_sala' => ['required', 'integer', 'min:1', 'max:8'],
             'valor_banheiro' => ['required', 'numeric'],
-            'horas_banheiro' => ['required', 'integer'],
+            'horas_banheiro' => ['required', 'integer', 'min:1', 'max:8'],
             'valor_cozinha' => ['required', 'numeric'],
-            'horas_cozinha' => ['required', 'integer'],
+            'horas_cozinha' => ['required', 'integer', 'min:1', 'max:8'],
             'valor_quintal' => ['required', 'numeric'],
-            'horas_quintal' => ['required', 'integer'],
+            'horas_quintal' => ['required', 'integer', 'min:1', 'max:8'],
             'valor_outros' => ['required', 'numeric'],
-            'horas_outros' => ['required', 'integer']
+            'horas_outros' => ['required', 'integer', 'min:1', 'max:8']
         ];
     }
 }
