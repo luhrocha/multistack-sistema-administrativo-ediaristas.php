@@ -33,9 +33,19 @@ Configurar os detalhes da aplicação e conexão com o banco de dados.
 ```
 php artisan migrate
 ```
+#### Criar o usuário admin
+
+```
+ php artisan db_seed
+```
+
+Usuário: admin@admin.com
+Senha: 123123123
 
 #### Iniciar o servidor de desenvolvimento
 
 ````
 php artisan serve
 ````
+
+
