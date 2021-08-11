@@ -18,6 +18,39 @@ class ServicoRequest extends FormRequest
     }
 
     /**
+     * Sobrescrevendo o método validationData(), para poder alterar o padrão monetário da máscara
+     *
+     * @return void
+     */
+    public function validationData()
+    {
+        $dados = $this->all();
+
+        $dados['valor_minimo'] = $this->formatarValorMonetario($dados['valor_minimo']);
+        $dados['valor_quarto'] = $this->formatarValorMonetario($dados['valor_quarto']);;
+        $dados['valor_sala'] = $this->formatarValorMonetario($dados['valor_sala']);;
+        $dados['valor_banheiro'] = $this->formatarValorMonetario($dados['valor_banheiro']);;
+        $dados['valor_cozinha'] = $this->formatarValorMonetario($dados['valor_cozinha']);;
+        $dados['valor_quintal'] = $this->formatarValorMonetario($dados['valor_quintal']);;
+        $dados['valor_outros'] = $this->formatarValorMonetario($dados['valor_outros']);;
+
+        $this->replace($dados);
+
+        return $dados;
+    }
+
+    /**
+     * Formata o valor monetário padrão pt-BR para o padrão internacional
+     *
+     * @param String $valor
+     * @return void
+     */
+    protected function formatarValorMonetario(String $valor)
+    {
+        return str_replace(['.', ','], ['', '.'], $valor);
+    }
+
+    /**
      * Get the validation rules that apply to the request.
      *
      * @return array
