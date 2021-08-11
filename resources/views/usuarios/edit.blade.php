@@ -8,7 +8,7 @@
 
 @section('content')
 
-@include('usuarios._message_errors')
+@include('_message_errors')
 
 <form action="{{ route('usuarios.update', $usuario) }}" method="post">
     @method('PUT')

@@ -8,11 +8,7 @@
 
 @section('content')
 
-@if (session('mensagem'))
-    <div class="alert alert-success">
-        {{ session('mensagem') }}
-    </div>
-@endif
+@include('_message_session')
 
 <table class="table table-sm">
     <thead>
