@@ -145,6 +145,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Salvar</button>
+                        <a href="{{route('servicos.index')}}" class="btn btn-danger">Cancelar</a>
                     </div>
                 </div>
             </div>

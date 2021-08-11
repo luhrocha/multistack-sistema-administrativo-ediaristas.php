@@ -25,6 +25,14 @@
                 <td>{{$servico->nome}}</td>
                 <td>
                 <a class="btn btn-primary" href="{{ route('servicos.edit', $servico) }}">Editar</a>
+                <form action="{{ route('servicos.destroy', $servico) }}" method="post" style="display: inline">
+                    @csrf
+                    @method('DELETE')
+
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Tem certeza que deseja remover esse serviço?')">
+                        Excluir
+                    </button>
+                </form>
                 </td>
             </tr>
         @empty

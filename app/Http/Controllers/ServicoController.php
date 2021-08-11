@@ -73,4 +73,17 @@ class ServicoController extends Controller
 
         return redirect()->route('servicos.index')->with('mensagem', 'Serviço atualizado com sucesso!!!');
     }
+
+    /**
+     * Remove um serviço do banco de dados
+     *
+     * @param Servico $servico
+     * @return void
+     */
+    public function destroy(Servico $servico)
+    {
+        $servico->delete();
+
+        return redirect()->route('servicos.index')->with('mensagem', 'Serviço removido com sucesso!');
+    }
 }

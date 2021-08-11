@@ -30,6 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/servicos/{servico}/edit', [ServicoController::class, 'edit'])->name('servicos.edit');
     Route::post('/servicos', [ServicoController::class, 'store'])->name('servicos.store');
     Route::put('/servicos/{servico}', [ServicoController::class, 'update'])->name('servicos.update');
+    Route::delete('/servicos/{servico}', [ServicoController::class, 'destroy'])->name('servicos.destroy');
 
     //Rotas do tipo resource
     Route::resource('usuarios', UsuarioController::class);
